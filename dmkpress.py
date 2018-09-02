@@ -20,7 +20,7 @@ def coming_titles(content):
     books = content.select(".book-enter")[0].ul.select("li")
     return (book.div.div.a["title"] for book in books)
 
-    
+
 def book_print(content):
     books = content.select(".book-print")[0].ul.select("li")
     return (book.div.div.a["title"] for book in books)
@@ -28,8 +28,8 @@ def book_print(content):
 
 def print_titles(header, titles):
     print("\n{}".format(header))
-    print("\n".join(titles))
-    
+    print("-", "\n- ".join(titles))
+
 
 def get_books():
     url = "https://dmkpress.com/"
@@ -38,8 +38,8 @@ def get_books():
     print_books = book_print(content)
     coming = coming_titles(content)
     return {
-        "coming":coming,
-        "printing":print_books,
+        "coming": coming,
+        "printing": print_books,
         }
 
 
@@ -53,6 +53,7 @@ def main():
     print_titles("=== new ===", new_books)
     print_titles("=== coming === ", coming)
     print_titles("=== printed ===", print_books)
-    
+
+
 if __name__ == "__main__":
     main()
