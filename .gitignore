@@ -1,5 +1,6 @@
-./img
-./dist
-./build
+img
+dist
 .vscode
 *.pyc
+build
+
