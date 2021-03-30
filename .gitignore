@@ -3,4 +3,4 @@ dist
 .vscode
 *.pyc
 build
-
+*.spec
