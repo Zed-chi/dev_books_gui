@@ -4,12 +4,16 @@ from threading import Thread
 from publishers.piter import get_books as p_books
 from publishers.williams import get_books as w_books
 from publishers.dmkpress import get_books as d_books
+from publishers.nostarch import get_books as n_books
+from publishers.nit import get_books as nit_books
 
 
 book_publishers = {
-    "piter": p_books, 
-    "williams": w_books, 
-    "dmk_press": d_books,    
+    "Питер": p_books, 
+    "Вильямс": w_books, 
+    "Dmk press": d_books,   
+    "No Starch Press":n_books, 
+    "Наука и техника":nit_books,
 }
 
 
@@ -25,7 +29,7 @@ class Application(tk.Frame):
     def create_option_frame(self):
         option_fr = tk.LabelFrame(
             self,
-            text="Option",
+            text="Опции",
             bd=2,
             padx=5,
             pady=5,
@@ -45,7 +49,7 @@ class Application(tk.Frame):
         self.load_btn.pack()
 
     def create_result_frame(self):
-        result_fr = tk.LabelFrame(self, text="Result", bd=2, padx=5, pady=5)
+        result_fr = tk.LabelFrame(self, text="Список", bd=2, padx=5, pady=5)
         result_fr.grid(column=1, row=0)
         # result_fr.grid_propagate(0)
         self.listbox = tk.Listbox(result_fr, height=25, width=100)
